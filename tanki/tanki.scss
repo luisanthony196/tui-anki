@@ -1,0 +1,74 @@
+CardScreen {
+	layout: grid;
+	grid-size: 1 2;
+	grid-rows: 1fr auto;
+	grid-gutter: 1;
+	Horizontal {
+		align: center middle;
+		Button {
+			border: none;
+			min-width: 6;
+			padding: 1 2;
+			background: $background-lighten-1;
+		}
+		#hard {
+			background: $error;
+		}
+		#mid {
+			margin: 0 1;
+			background: $accent;
+		}
+		#easy {
+			background: $success;
+		}
+	}
+	Label {
+		content-align: center middle;
+		column-span: 3;
+		height: 1fr;
+		width: 1fr;
+	}
+}
+
+Deck {
+	layout: grid;
+	grid-size: 3;
+	grid-columns: 1fr auto auto;
+	grid-rows: 1 3;
+	grid-gutter: 0 1;
+	margin: 1;
+	padding: 1;
+	background: $boost;
+	height: 5;
+	#title {
+		text-style: bold;
+	}
+	#description {
+		height: 2;
+	}
+	Button {
+		row-span: 3;
+		border: none;
+		min-width: 4;
+		padding: 1 1;
+		background: $background-lighten-1;
+	}
+	Statistic {
+		row-span: 3;
+		padding: 1 1;
+		background: $background-lighten-1;
+		#hard {
+			color: $error-darken-3;
+			background: $error-lighten-3;
+		}
+		#mid {
+			margin: 0 1;
+			color: $accent-darken-3;
+			background: $accent-lighten-3;
+		}
+		#easy {
+			color: $success-darken-3;
+			background: $success-lighten-3;
+		}
+	}
+}
