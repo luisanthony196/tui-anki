@@ -6,7 +6,7 @@ from textual.widgets import Button, Footer, Header, Input, Label, Static
 
 from tanki.card import CardScreen
 from tanki.decks import Deck, DeckList
-from tanki.repository import get_all_decks
+from tanki.repository import get_all_decks, sync_and_commit
 
 
 class MainScreen(Screen[None]):
@@ -32,12 +32,16 @@ class Tanki(TankiApp):
 	CSS_PATH = Path(__file__).parent / "tanki.scss"
 	BINDINGS = [
 		("q", "exit", "Exit"),
-		("g", "card", "Card")
+		("s", "sync_and_commit", "Save progress")
 	]
 
 	def get_default_screen(self):
 		self.main_screen = MainScreen(self.push_screen)
 		return self.main_screen
 
+	def action_sync_and_commit(self):
+		sync_and_commit()
+
 	def action_exit(self):
+		sync_and_commit()
 		self.app.exit()
