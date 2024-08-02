@@ -11,16 +11,16 @@ Deck {
 		row-span: 3;
 		padding: 1 1;
 		background: $background-lighten-1;
-		#hard {
+		#s_hard {
 			color: $error-darken-3;
 			background: $error-lighten-3;
 		}
-		#mid {
+		#s_good {
 			margin: 0 1;
 			color: $accent-darken-3;
 			background: $accent-lighten-3;
 		}
-		#easy {
+		#s_easy {
 			color: $success-darken-3;
 			background: $success-lighten-3;
 		}
@@ -47,6 +47,7 @@ CardScreen {
 		padding: 2;
 		content-align: center middle;
 		text-align: center;
+		text-style: bold;
 		CardBody {
 			padding: 0 2;
 			grid-size: 1 2;
@@ -71,6 +72,12 @@ CardScreen {
 			border: round $success;
 		}
 	}
+}
+
+.custom_btm {
+	min-width: 4;
+	height: 3;
+	display: block;
 }
 
 .lock {

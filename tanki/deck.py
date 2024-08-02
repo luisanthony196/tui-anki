@@ -3,14 +3,14 @@ from textual.containers import Grid, Horizontal, VerticalScroll
 from textual.widgets import Button, Label, Static
 
 from tanki.card import CardScreen
-from tanki.container import BorderBody
+from tanki.widgets.container import BorderBody
 
 
 class Statistic(Horizontal):
 	def compose(self):
-		yield Label("02", id="hard")
-		yield Label("32", id="mid")
-		yield Label("12", id="easy")
+		yield Label("02", id="s_hard")
+		yield Label("32", id="s_good")
+		yield Label("12", id="s_easy")
 
 class Deck(Grid):
 	def __init__(self, deck_id, title, description, push_card):

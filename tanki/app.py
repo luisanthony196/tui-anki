@@ -4,10 +4,13 @@ from textual.containers import Vertical
 from textual.screen import Screen
 from textual.widgets import Button, Footer, Header, Input, Label, Static
 
+from tanki import repository
 from tanki.card import CardScreen
-from tanki.decks import Deck, DeckList
-from tanki.repository import get_all_decks, sync_and_commit
+from tanki.deck import Deck, DeckList
+from tanki.repository.deck import get_all_decks
 
+repository.sync()
+repository.create_tables()
 
 class MainScreen(Screen[None]):
 	decks = []
@@ -40,8 +43,8 @@ class Tanki(TankiApp):
 		return self.main_screen
 
 	def action_sync_and_commit(self):
-		sync_and_commit()
+		repository.commit()
 
 	def action_exit(self):
-		sync_and_commit()
+		repository.commit()
 		self.app.exit()
