@@ -10,6 +10,14 @@ def create_tables():
 	conn.executescript(script)
 	conn.commit()
 
+def insert_examples():
+	path = os.path.join(os.getcwd(), 'tanki', 'database', 'examples.sql')
+	with open(path, 'r') as file:
+		script = file.read()
+
+	conn.executescript(script)
+	conn.commit()
+
 def commit():
 	if conn.in_transaction:
 		conn.commit()

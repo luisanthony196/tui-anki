@@ -15,6 +15,9 @@ fsrs = "^2.5.1"
 [tool.poetry.group.dev.dependencies]
 textual-dev = "^1.5.1"
 
+[tool.poetry.scripts]
+tanki = "tanki.__main__:cli"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

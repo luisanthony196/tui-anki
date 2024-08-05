@@ -1,4 +1,5 @@
 from tanki.app import Tanki
 
-app = Tanki()
-app.run()
+def cli():
+    app = Tanki()
+    app.run()
